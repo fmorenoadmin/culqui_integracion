@@ -65,7 +65,7 @@
     });
 
     function pdf() {
-      window.location.assign("http://localhost/culqui_integracion/?pagado=si");
+      window.location.assign("./?pagado=si");
     }
 
     function culqi() {
@@ -85,7 +85,7 @@
           email: '<?php echo $correo_comp; ?>' 
         };
 
-        var url = "../plugins/proceso.php";
+        var url = "./plugins/proceso.php";
 
         $.post(url,data,function(res){
           alert(' Tu pago se Realizó con ' + res + '. Agradecemos tu preferencia.');
