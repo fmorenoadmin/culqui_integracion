@@ -14,7 +14,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;subset=latin-ext" rel="stylesheet">
 	<?php
 		$sid = $_SESSION['sid'] = session_id();
-		$_SESSION['totCart']=150000;
+		$_SESSION['totCart']=952500000;
 		$dni_comp = '72042683';
 		$direccion = 'Francisco Lazo';
 		$departamento = 'Lima';
@@ -38,7 +38,7 @@
     Culqi.publicKey = 'pk_test_25E7HHJpVTXS26cr';
 
     //descompocición del total:
-    var largo, millares, centenas, decimales, totalPago;
+    var largo, millones, millares, centenas, decimales, totalPago;
     largo = <?php echo strlen($_SESSION['totCart']); ?>;
     if (largo<7) {
       centenas = '<?php echo substr($_SESSION['totCart'],0, -3); ?>';
@@ -46,12 +46,18 @@
       totalPago = centenas + decimales;
     }
     if (largo>=7 && largo<11) {
-      millares = '<?php echo substr($_SESSION['totCart'],0, -7); ?>';
+      millares = '<?php echo substr($_SESSION['totCart'],0, -6); ?>';
       centenas = '<?php echo substr($_SESSION['totCart'],-6, 3); ?>';
       decimales = '<?php echo substr($_SESSION['totCart'], -2) ?>';
       totalPago = millares + centenas + decimales;
     }
-    //totalPago = <?php echo $_SESSION['totCart']; ?>;
+    if (largo>=10 && largo<14) {
+      millones = '<?php echo substr($_SESSION['totCart'],0, -10); ?>';
+      millares = '<?php echo substr($_SESSION['totCart'],0, -6); ?>';
+      centenas = '<?php echo substr($_SESSION['totCart'],-6, 3); ?>';
+      decimales = '<?php echo substr($_SESSION['totCart'], -2) ?>';
+      totalPago = millones + millares + centenas + decimales;
+    }
 
     Culqi.settings({
       title: 'Tienda en Linea - Frank Moreno',
