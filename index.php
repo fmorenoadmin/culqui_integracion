@@ -14,7 +14,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;subset=latin-ext" rel="stylesheet">
 	<?php
 		$sid = $_SESSION['sid'] = session_id();
-		$_SESSION['totCart']=952500000;
+		$_SESSION['totCart']=150000;
 		$dni_comp = '72042683';
 		$direccion = 'Francisco Lazo';
 		$departamento = 'Lima';
