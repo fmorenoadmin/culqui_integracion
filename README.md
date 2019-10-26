@@ -6,7 +6,7 @@ Recuerda que debes cambiar:
 
 *La publicKey (index.php linea 33)
 
-*La SECRET_KEY (plugins/proceso.php linea 8)
+*La SECRET_KEY (plugins/proceso.php linea 8):: usen esta para que prueben que funciona si no tiene su secret_key sk_test_zBWxHYk3Jv7k4cRm
 
 Solo con eso debería funcionar Culqui modo integración.
 
