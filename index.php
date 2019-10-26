@@ -12,9 +12,8 @@
 	<link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;subset=latin-ext" rel="stylesheet">
 	<?php
-		$_SESSION['sid'] = session_id();
-		$_SESSION['totCart']=150.00;
-		$_SESSION[''];
+		$sid = $_SESSION['sid'] = session_id();
+		$_SESSION['totCart']=150000;
 		$dni_comp = '72042683';
 		$direccion = 'Francisco Lazo';
 		$departamento = 'Lima';
@@ -30,18 +29,18 @@
 
 
   <script>
-    Culqi.publicKey = 'publicKey';
+    Culqi.publicKey = 'pk_test_25E7HHJpVTXS26cr';
 
     //descompocición del total:
     var largo, millares, centenas, decimales, totalPago;
     largo = <?php echo strlen($_SESSION['totCart']); ?>;
     if (largo<7) {
-      centenas = <?php echo substr($_SESSION['totCart'],0, -3); ?>;
+      centenas = '<?php echo substr($_SESSION['totCart'],0, -3); ?>';
       decimales = '<?php echo substr($_SESSION['totCart'], -2) ?>';
       totalPago = centenas + decimales;
     }
     if (largo>=7 && largo<11) {
-      millares = <?php echo substr($_SESSION['totCart'],0, -7); ?>;
+      millares = '<?php echo substr($_SESSION['totCart'],0, -7); ?>';
       centenas = '<?php echo substr($_SESSION['totCart'],-6, 3); ?>';
       decimales = '<?php echo substr($_SESSION['totCart'], -2) ?>';
       totalPago = millares + centenas + decimales;
@@ -85,7 +84,7 @@
           email: '<?php echo $correo_comp; ?>' 
         };
 
-        var url = "./plugins/proceso.php";
+        var url = "../plugins/proceso.php";
 
         $.post(url,data,function(res){
           alert(' Tu pago se Realizó con ' + res + '. Agradecemos tu preferencia.');
