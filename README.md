@@ -10,6 +10,15 @@ Recuerda que debes cambiar:
 
 Solo con eso debería funcionar Culqui modo integración.
 
+El costo total del producto Culqui lo Maneja de la Siguente manera: (linea 17 del index.php)
+
+15 Soles =  15000
+
+150 Soles = 150000
+
+1500 Soles = 1500000
+
+15 000 Soles = 15000000
 
 Tarjetas de Prueba para integración:
 
